@@ -1,0 +1,52 @@
+.contact-page h2{
+    position: sticky!important;
+    top: 0;
+    width: 100%;
+    margin-top: 0;
+    padding-bottom: 20px;
+    padding-top: 100px;
+    text-align: center;
+    z-index: 0;
+}
+  
+.contact-form{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    box-shadow: var(--shadow);
+    background-color: var(--primary-background-color);
+    z-index: 1;
+}
+.contact-info{
+    text-align: center;
+    width: 90%;
+    margin-bottom: 20px;
+}
+.contact-field{
+    width: 50%;
+    margin: 10px;
+    border-radius: var(--radius-border);
+    padding: 15px;
+    font-size: medium;
+    box-sizing: border-box;
+}
+.contact-field:focus::placeholder{
+    color: transparent;
+}
+.contact-form > button {
+    width: 10%;
+}
+
+@media (max-width: 768px) {
+    .contact-field{
+        width: 75%;
+    }
+    .contact-form > button{
+        width: max-content;
+    }
+
+}

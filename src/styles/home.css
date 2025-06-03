@@ -1,0 +1,124 @@
+/*home page css*/
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.services-home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    width: 100%;
+}
+@media (max-width: 768px) {
+    .services-home-container {
+        height: fit-content;
+        flex-direction: column;
+    }
+}
+
+.service-home{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 90%;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: solid 1px var(--primary-text-color);
+}
+.service-home:last-child {
+    border-bottom: none;
+}
+.service-home.even {
+    flex-direction: row;
+}
+.service-home-image {
+    width: 40%;
+    height: 100%;
+    object-fit: contain;
+}
+.service-home-text-content {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+@media (max-width: 768px) {
+    .service-home {
+        flex-direction: column;
+    }
+    .service-home.even {
+        flex-direction: column;
+        width: 90%;
+    }
+    .service-home-image {
+        width: 90%;
+        height: 50%;
+    }
+    .service-home-text-content {
+        width: 90%;
+        align-items: center;
+        margin-top: 10px;
+    }
+}
+
+.about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: fit-content;
+    margin: 0;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: var(--secondary-color);
+}
+.about-text-content{
+    width: 70%;
+}
+.about-story-home {
+    margin-bottom: 20px;
+    text-align: justify;
+    line-height: 1.5;
+    font-size: 1rem;
+}
+@media (max-width: 768px) {
+    .about-text-content{
+        width: 85%;
+    }
+}
+
+.portfolio-home {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 70%;
+    height: 100%;
+    flex-wrap: wrap;
+}
+.website-portfolio-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    margin: 10px;
+    padding-bottom: 10px;
+    background-color: var(--primary-background-color);
+    border-radius: var(--radius-border);
+}
+.website-portfolio-home img {
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: var(--radius-border);
+    border-top-right-radius: var(--radius-border);
+}

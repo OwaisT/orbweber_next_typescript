@@ -1,0 +1,105 @@
+.about-us-section h1 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+  
+.about-us-section h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+.about-personal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-personal-image{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.about-personal-description{
+    margin: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.website-cards-about{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 70px;
+}
+
+.website-card-about{
+    border-radius: 25px;
+    box-shadow: -2px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    display: flex;
+    width: 85%;
+    padding: 30px;
+    flex-direction: row;
+}
+
+.website-image-about{
+    width: 30%;
+    border-radius: 25px;
+}
+
+.website-text-about{
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    margin-left: 30px;
+}
+
+.website-text-about p {
+    line-height: 25px;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+    .about-personal-description{
+        margin: 20px;
+        font-size: 20px;
+        text-align: justify;
+    }
+
+    .website-card-about{
+        width: 85%;
+        padding: 10px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .website-image-about{
+        width: 65%;
+    }
+
+    .website-text-about {
+        text-align: center;
+    }
+
+    .website-text-about p {
+        text-align: justify;
+    }
+
+    .website-text-about{
+        display: flex;
+        flex-direction: column;
+        width: 65%;
+        margin-left: 0px;
+    }
+    
+        
+}

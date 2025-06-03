@@ -1,0 +1,27 @@
+.article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+@media (max-width: 768px) {
+    .article {
+        width: 100%;
+    }
+}
+
+.article p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.article li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.article strong {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
