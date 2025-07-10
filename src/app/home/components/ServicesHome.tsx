@@ -1,5 +1,6 @@
 import "@styles/home.css"
 
+// Data structure for service on home page
 interface Service {
     image: string;
     headline: string;
@@ -12,6 +13,7 @@ interface ServicesHomeProps {
     servicesHome: Service[];
 }
 
+// Returns a list of serveices elements for home page
 function ServicesHome(props: ServicesHomeProps) {
     const services = props.servicesHome;
 
@@ -33,6 +35,8 @@ interface ServiceHomeProps {
     styleClass: string;
 }
 
+// Returns a single service element for home page
+// Contains a service image, headline, subheadline, & button that leads to service page
 function ServiceHome(props: ServiceHomeProps) {
     const { service } = props;
     const { styleClass } = props;

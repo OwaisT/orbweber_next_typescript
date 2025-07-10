@@ -5,13 +5,14 @@ import { contactStructuredData } from "@schemas/SchemaContact";
 import { fetchPageMetadata } from "@utils/metadata";
 import "@styles/contact.css"
 
-
+// Data structure for contact page
 interface ContactData {
     contact: {
         copy: string;
     };
 }
 
+// Get instructions as contact page data from backend
 async function getContactPageData(): Promise<ContactData> {
     const backendLink = process.env.NEXT_PUBLIC_BACKEND_LINK;
     const res = await fetch(`${backendLink}get_contact`, {
@@ -20,6 +21,7 @@ async function getContactPageData(): Promise<ContactData> {
     return res.json();
 }
 
+// GGenerates metadata for the contact page
 export async function generateMetadata() {
   const metadata = await fetchPageMetadata("get_contact"); // Fetch metadata for the home page from your database
   return {
@@ -28,7 +30,7 @@ export async function generateMetadata() {
   };
 }
 
-
+// Contact page component
 export default async function Contact() {
     const contactData = await getContactPageData();
 

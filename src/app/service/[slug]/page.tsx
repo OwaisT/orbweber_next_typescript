@@ -7,6 +7,7 @@ import Script from "next/script";
 import "@styles/service.css";
 import { Service } from "@/types/service";
 
+// Gets the service data from backend based on the slug
 async function getService(slug: string) {
     const backendLink = process.env.NEXT_PUBLIC_BACKEND_LINK;
     const data = { service_name: slug };
@@ -29,6 +30,7 @@ interface ServicePageProps {
     params: Promise<{ slug: string }>;
 }
 
+// Generates Metadata for the service page
 export async function generateMetadata({ params }: ServicePageProps) {
     const { slug } = await params;
     const service = await getService(slug);
@@ -38,6 +40,8 @@ export async function generateMetadata({ params }: ServicePageProps) {
     };
 }
 
+// Main service page component
+// Gets service data from backend and renders the service page with hero image, features, terms, and structured data
 export default async function ServicePage({ params }: ServicePageProps) {
     try {
         const { slug } = await params;

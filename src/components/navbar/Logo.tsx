@@ -1,5 +1,6 @@
 import React from "react";
 
+// Logo in SVG format for color changing
 function Logo() {
     return(
         <svg className="logo" version="1.0" width="500.000000pt" height="500.000000pt" viewBox="0 0 500.000000 500.000000" preserveAspectRatio="xMidYMid meet">

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import "@styles/consentBanner.css";
 import { initGA } from "@/utils/AnalyticsHelpers";
 
+// CConsent banner for analytics processing
 export default function ConsentBanner() {
     const consentText = "Nous utilisons des cookies et des technologies similaires pour améliorer votre expérience. Vous pouvez accepter ou refuser leur utilisation selon vos préférences.";
     const [showBanner, setShowBanner] = useState<boolean>(false);

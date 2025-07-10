@@ -3,12 +3,15 @@ import { logPageView, otherEventAnalytics } from "@/utils/AnalyticsHelpers";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
+// Data structure for object to be passed on contact page
 interface ContactData {
     contact: {
         copy: string;
     };
 }
 
+// Contact form component for contact page.
+// Provides user the instructions for contacting and a form for filling
 export default function ContactForm(props : { contactData: ContactData }) {
     axios.defaults.headers.common['Authorization'] = process.env.NEXT_PUBLIC_API_KEY;
     const backendLink = process.env.NEXT_PUBLIC_BACKEND_LINK;
@@ -21,6 +24,7 @@ export default function ContactForm(props : { contactData: ContactData }) {
         message: ''
     });
 
+    // Handles changes in the field and updates the form data state
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setFormData(prevState => ({
@@ -29,12 +33,15 @@ export default function ContactForm(props : { contactData: ContactData }) {
         }));
     };
 
+    // Handles form submission on submit button click, and calls the senEmail function
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         otherEventAnalytics("Form Submit", "Contact Form Submit", "Contact Form Submit", 1);
         sendEmail();
     };
 
+    // Triggers email sending mechanism by making API call to the backend
+    // Updates the forntend based on response from backend
     async function sendEmail() {
         try{
             setLoading(true);
@@ -72,6 +79,7 @@ export default function ContactForm(props : { contactData: ContactData }) {
     );
 }
 
+// Data structure for contact form
 interface ContactInputProps {
     type: string;
     name: string;
@@ -83,6 +91,7 @@ interface ContactInputProps {
     pattern?: string;
 }
 
+// ContactInput component for rendering individual input fields with standard properties
 function ContactInput(props : ContactInputProps) {
     return(
         <input type={props.type} className="contact-field" name={props.name} value={props.value} onChange={props.onChange} 

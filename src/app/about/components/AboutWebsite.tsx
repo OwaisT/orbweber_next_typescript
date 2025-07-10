@@ -1,6 +1,7 @@
 "use client";
 import { otherEventAnalytics } from "@/utils/AnalyticsHelpers";
 
+// Populates the data about previously created websites: Image, name, description, and link on about page
 interface AboutWebsiteProps {
     website: {
         image: string;

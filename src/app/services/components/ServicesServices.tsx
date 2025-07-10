@@ -15,6 +15,7 @@ interface ServicesServicesProps {
     servicesServices: Service[];
 }
 
+// Renders services offered
 function ServicesServices(props : ServicesServicesProps) {
     const services = props.servicesServices;
     logPageView("/services");

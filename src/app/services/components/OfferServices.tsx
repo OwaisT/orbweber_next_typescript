@@ -12,6 +12,7 @@ interface OfferServiceProps {
     } | null;
 }
 
+// Renders services that are part of a certain offer, such as a special promotion or discount
 function OfferServices (props : OfferServiceProps) {
     const offer = props.offerService;
 

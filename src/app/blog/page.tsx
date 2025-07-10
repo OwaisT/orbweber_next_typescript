@@ -5,6 +5,7 @@ import Script from "next/script";
 import { Article } from "@/types/article";
 import { PageViewLog } from "@/components/AnalyticsLoggers";
 
+// Gets the articles from backend
 async function getArticles(): Promise<Article[]> {
     const backendLink = process.env.NEXT_PUBLIC_BACKEND_LINK;
     const res = await fetch(`${backendLink}get_articles`, {
@@ -13,14 +14,17 @@ async function getArticles(): Promise<Article[]> {
     return res.json();
 }
 
+// Generates Metadata for the page
 export async function generateMetadata() {
-  const metadata = await fetchPageMetadata("get_blog_meta"); // Fetch metadata for the home page from your database
-  return {
-    title: metadata.meta_title,
-    description: metadata.meta_description
-  };
+    const metadata = await fetchPageMetadata("get_blog_meta"); // Fetch metadata for the home page from your database
+    return {
+        title: metadata.meta_title,
+        description: metadata.meta_description
+    };
 }
 
+// Main component for the blog page
+// Gets the articles and then populates them in a specific manner on frontend
 export default async function Articles() {
     const articles = await getArticles();
     const articlesSctructuredData = getSchemaArticles(articles);

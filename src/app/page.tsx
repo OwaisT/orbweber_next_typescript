@@ -8,6 +8,7 @@ import { homeStructuredData } from "@schemas/SchemaHome";
 import Script from "next/script";
 import { fetchPageMetadata } from "@utils/metadata";
 
+// Get the home page data from the backend
 async function getWindowHome() {
     const backendLink = process.env.NEXT_PUBLIC_BACKEND_LINK;
     const res = await fetch(`${backendLink}get_window_home`, {
@@ -16,6 +17,7 @@ async function getWindowHome() {
     return res.json();
 }
 
+// Genarates metadata for the home page
 export async function generateMetadata() {
   const metadata = await fetchPageMetadata("get_window_home"); // Fetch metadata for the home page from your database
   return {
@@ -24,6 +26,8 @@ export async function generateMetadata() {
   };
 }
 
+// Home page component
+// Renders a hero component, services and about section and a footer
 export default async function Home() {
     const windowHome = await getWindowHome();
 

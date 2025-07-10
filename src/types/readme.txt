@@ -1,0 +1,1 @@
+Only data types that are required by multiple pages

@@ -16,6 +16,7 @@ interface Hero {
     image: string
 }
 
+// Hero component containing an animated gradient bg, headline, subheadline, button and an image
 function HeroAnimBG(props : HeroProps) {
 
     const heros = props.hero

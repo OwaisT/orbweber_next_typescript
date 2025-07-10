@@ -7,6 +7,7 @@ interface FeaturesProps {
     service: Service
 }
 
+// Displays the features for a service
 export default function Features({ service } : FeaturesProps) {
     
     const features = service.features
@@ -31,6 +32,8 @@ export default function Features({ service } : FeaturesProps) {
     )
 }
 
+// Creates a card for one feature
+// Used in features to display a list of feature cards
 function FeatureCard(props : { feature: Feature }) {
     const { feature } = props;
 

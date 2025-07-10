@@ -1,0 +1,1 @@
+This module contains structured data as variables for each page to be fetched by the required page

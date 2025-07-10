@@ -6,7 +6,7 @@ import AboutWebsite from "./components/AboutWebsite";
 import Script from "next/script";
 import { aboutStructuredData } from "@schemas/SchemaAbout";
 
-
+// Data object structure to be passed to about page
 interface About {
     abouts_personal: {
         image: string;
@@ -21,6 +21,7 @@ interface About {
     }[];
 }
 
+// Function to fetch about data from the backend
 async function getAbout(): Promise<About> {
     const backendLink = process.env.NEXT_PUBLIC_BACKEND_LINK;
     const res = await fetch(`${backendLink}get_about`, {
@@ -29,6 +30,7 @@ async function getAbout(): Promise<About> {
     return res.json();
 }
 
+// Function to generate meta_data for about page
 export async function generateMetadata() {
   const metadata = await fetchPageMetadata("get_about"); // Fetch metadata for the home page from your database
   return {
@@ -37,6 +39,8 @@ export async function generateMetadata() {
   };
 }
 
+// Main component for the about page
+// Gets the about data from backend and renders it on the page
 export default async function About() {
     const about = await getAbout();
 

@@ -5,6 +5,7 @@ import { fetchPageMetadata } from "@utils/metadata";
 import Script from "next/script";
 import { getServicesStructuredData } from "@schemas/SchemaServices";
 
+// Gets services from backend
 async function getServices() {
     const backendLink = process.env.NEXT_PUBLIC_BACKEND_LINK;
     const res = await fetch(`${backendLink}get_services`, {
@@ -13,6 +14,7 @@ async function getServices() {
     return res.json();
 }
 
+// Generates metadata for the page
 export async function generateMetadata() {
       const metadata = await fetchPageMetadata("get_services"); // Fetch metadata for the home page from your database
       return {
@@ -21,6 +23,8 @@ export async function generateMetadata() {
       };
 }
 
+// Main services page component
+// Gets services data from backend, and renders services that are part of an offer and others separately
 export default async function Services() {
     const services = await getServices();
     const servicesStruturedData = getServicesStructuredData(services.offer_services.concat(services.services_services));

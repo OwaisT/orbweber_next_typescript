@@ -1,6 +1,7 @@
 "use client";
 import { logPageView } from "@/utils/AnalyticsHelpers";
 
+// Populates the data of personal information: Image and story on about page
 interface AboutPersonalProps {
     abouts: {
         image: string;

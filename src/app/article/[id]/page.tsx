@@ -4,6 +4,7 @@ import Script from 'next/script';
 import "@styles/article.css";
 import { logPageView } from '@/utils/AnalyticsHelpers';
 
+// Gets the article data from backend using the article ID
 async function getArticle(id: string) {
     const backendLink = process.env.NEXT_PUBLIC_BACKEND_LINK;
     const data = { article_id : id };
@@ -22,12 +23,14 @@ async function getArticle(id: string) {
     return res.json();
 }
 
+// Type definition for the page props
 interface PageProps {
     params: Promise<{
         id: string;
     }>
 }
 
+// Generates Metadata for the article page
 export async function generateMetadata({ params }: PageProps) {
     const { id } = await params;
     const article = await getArticle(id);
@@ -37,6 +40,8 @@ export async function generateMetadata({ params }: PageProps) {
     };
 }
 
+// Main component for the article page
+// Fetches the article data from backend and then populates on frontend
 export default async function Article({ params }: PageProps) {
     const { id } = await params;
     

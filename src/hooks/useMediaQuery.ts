@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 
+// Hook to check the screen size for responsive design
 function useMediaQuery(query: string) {
     const [matches, setMatches] = useState(() => {
         if (typeof window === 'undefined') return false; // Ensure code runs only on client side

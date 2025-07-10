@@ -1,8 +1,10 @@
 
+// Checks if the object is empty
 export function isObjectNotEmpty(obj) {
     return Object.keys(obj).length >= 1;
 }
 
+// Formats date to a specific format for logging purposes
 export function formatDate() {
     const startTime = new Date();
 
@@ -23,6 +25,7 @@ export function formatDate() {
     console.log(formattedTime);
 }
 
+// Split text using a separator and return an array of trimmed parts
 export function splitAndPopSeparator(text, separator) {
     // Split the string using the separator and trim each part
     const parts = text.split(separator).map(part => part.trim());
@@ -30,6 +33,7 @@ export function splitAndPopSeparator(text, separator) {
     return parts;
 }
 
+// Capitalizes first letter of a string to upper case
 export function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 };

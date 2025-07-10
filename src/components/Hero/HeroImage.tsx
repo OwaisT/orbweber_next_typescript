@@ -12,6 +12,7 @@ interface Hero {
     headline: string;
 }
 
+// Hero component containing an image bg, headline, subheadline & button
 function HeroImage(props : HeroProps) {
 
     const { hero } = props;

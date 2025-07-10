@@ -1,5 +1,6 @@
 import React from "react";
 
+// Creates an space
 function SectionSpacer() {
     return(
         <div>

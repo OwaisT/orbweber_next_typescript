@@ -3,6 +3,7 @@ import React from "react";
 import { splitAndPopSeparator } from "@utils/Helpers";
 import { logPageView, otherEventAnalytics } from "@/utils/AnalyticsHelpers";
 
+// Data structure for props of about section on home page
 interface AboutSectionProps {
     storyHome: string;
     websitesHome: Array<{
@@ -13,6 +14,8 @@ interface AboutSectionProps {
     }>;
 }
 
+// About sectio component on home page
+// Contains some story lines and past projects
 function AboutSection({ storyHome, websitesHome } : AboutSectionProps) {
     const stories = splitAndPopSeparator(storyHome, "\n");
     logPageView("/");
@@ -36,6 +39,7 @@ function AboutSection({ storyHome, websitesHome } : AboutSectionProps) {
 
 export default AboutSection;
 
+// Data structure for websites cards in about section of home page
 interface WebsitePortfolioHomeProps {
     website: {
         image: string;
@@ -45,6 +49,7 @@ interface WebsitePortfolioHomeProps {
     };
 }
 
+// Returns a website card component containing image, name and a button taking to the website
 function WebsitePortfolioHome({ website } : WebsitePortfolioHomeProps) {
     return (
         <div className="website-portfolio-home">
@@ -64,10 +69,12 @@ function WebsitePortfolioHome({ website } : WebsitePortfolioHomeProps) {
     );
 };
 
+// Data structure for story lines on home page about section
 interface StoriesHomeProps {
     stories: string[];
 }
 
+// Returns story lines for home page about section
 function StoriesHome({ stories } : StoriesHomeProps) {
     return (
         <div>

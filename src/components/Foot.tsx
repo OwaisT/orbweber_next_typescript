@@ -1,6 +1,7 @@
 import React from "react";
 import { FB, Insta, LinkedIn } from "./SMLogos";
 
+// Footer conponent containing Brand name and social links
 function Foot() {
     return(
         <div className="foot">

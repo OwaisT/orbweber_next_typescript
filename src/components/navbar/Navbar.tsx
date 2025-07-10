@@ -6,6 +6,7 @@ import "@styles/navbar.css";
 import useMediaQuery from "@hooks/useMediaQuery";
 import ConsentBanner from "../ConsentBanner";
 
+// Navbar component renders the navbar
 function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);

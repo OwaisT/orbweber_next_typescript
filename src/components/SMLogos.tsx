@@ -1,5 +1,6 @@
 import React from "react";
 
+// Social media icons components in SVG format for color changing on hover
 function FB() {
     return(
         <svg className="sm-logo" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">

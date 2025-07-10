@@ -3,6 +3,7 @@ import { useRouter } from 'next/navigation';
 import parse from 'html-react-parser';
 import { Article } from '@/types/article';
 
+// Populates the data about articles: Title and excerpt on articles page
 interface ArticleProps {
     article: Article
 }

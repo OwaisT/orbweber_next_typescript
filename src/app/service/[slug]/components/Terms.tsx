@@ -6,6 +6,7 @@ interface TermsProps {
     steps: string;
 }
 
+// Displays terms of sales on the sevice page
 export default function Terms({ steps } : TermsProps) {
 
     const safeSteps = DOMPurify.sanitize(steps)
